@@ -15,7 +15,6 @@ const remove = function (id){
   }
 }
 
-const boundRemoveComment = id => dispatch(removeComment(id));
 
 // add
 
@@ -28,7 +27,6 @@ const add = function (text, author){
   }
 }
 
-const boundAddComment = (text, author) => dispatch(addComment(text, author));
 
 // edit
 
@@ -40,7 +38,6 @@ const edit = function(id, text){
   }
 }
 
-const boundEditComment = (text, id) => dispatch(editComment(text, id));
 
 //thumb up
 
@@ -48,12 +45,11 @@ const thumbUp = function(id, likes){
   return{
     type: THUMB_UP_COMMENT,
     id,
-    likes: ++likes
+    likes
   }
 
 }
 
-const boundThumbUpComment = (id, likes) => dispatch(ThumbUpComment(id, likes));
 
 // thumb down
 
@@ -61,8 +57,6 @@ const thumbDown = function(id, dislikes){
   return{
     type: THUMB_DOWN_COMMENT,
     id,
-    dislikes: ++dislikes
+    dislikes:
   }
 }
-
-const boundThumbUpComment = (id, dislikes) => dispatch(ThumbDownComment(id, dislikes));
